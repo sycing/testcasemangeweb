@@ -78,14 +78,14 @@ def search(request):
         return render_to_response('home.html', {'string': testcase, 'bbb': aaa, 'ccc': infaceid})
 
 def upload_file(request):
-    if request.method == "POST":    # 请求方法为POST时，进行处理
+    if request.method == "POST":# 请求方法为POST时，进行处理
         myFile =request.FILES.get("myfile", None)    # 获取上传的文件，如果没有文件，则默认为None
         # print(myFile)
         if not myFile:
             return HttpResponse("no files for upload!")
         destination = open(os.path.join("upload",myFile.name),'wb+')    # 打开特定的文件进行二进制的写操作
         # print(destination.read())
-        for chunk in myFile.chunks():      # 分块写入文件
+        for chunk in myFile.chunks():# 分块写入文件
             destination.write(chunk)
         destination.close()
         uploadfilepath=os.path.join("upload",myFile.name)

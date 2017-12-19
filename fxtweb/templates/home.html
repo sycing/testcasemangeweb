@@ -20,9 +20,7 @@
     form.submit();//form表单提交
  }
 </script>
-
 <script type="text/javascript">
-
 function validate_required(field,alerttxt)
 {
 with (field)
@@ -45,8 +43,6 @@ with (thisform)
   }
  }
 </script>
-
-
 <script type="text/javascript">
 {#    $("#my_form").change(function() {#}
 {#        var zone = $("#my_form").serialize();#}
@@ -78,16 +74,16 @@ with (thisform)
 
 <style type="text/css">
  table{
-        width: 1024px;
+     width: 1024px;
     }
   table th{
-            white-space: nowrap;
-        }
+      white-space: nowrap;
+    }
   table td{
-            white-space: nowrap;
-			min-width:50px
+      white-space: nowrap;
+      min-width:50px
 
-        }
+    }
   body,table{
          font-size:12px;
         }
@@ -98,51 +94,147 @@ with (thisform)
         }
 	
   table,table tr th, table tr td { border:1px solid #0094ff; }
- 
+
   h1,h2,h3{
-   font-size:12px;
-   margin:0;
-   padding:0;
-  }
+    font-size:12px;
+    margin:0;
+    padding:0;
+    }
+
   table.tab_css_1{
-   border:1px solid #cad9ea;
-   color:#666;
-  }
+    border:1px solid #cad9ea;
+    color:#666;
+    }
+
   table.tab_css_1 th {
    /*background-image: url("th_bg1.gif");*/
-   background-repeat:repeat-x;
-   height:30px;
-  }
+    background-repeat:repeat-x;
+    height:30px;
+    }
+
   table.tab_css_1 td,table.tab_css_1 th{
    border:1px solid #cad9ea;
    padding:0 1em 0;
   }
+
   table.tab_css_1 tr.tr_css{
    background-color:#f5fafe;
    height:30px;
-
   }
+
+</style>
+<style type="text/css">
+    <!--
+.nav ul{
+
+    width:980px;
+
+    {#margin:0px auto;#}
+
+    height:38px;
+
+    padding:0;
+
+    }
+
+.nav ul li{
+
+    float:left;
+    }
+
+.nav ul li a{
+
+    width:80px;
+
+    height:28px;
+
+    line-height:28px;
+
+    background: #aae0ff;
+
+    color: #000;
+
+    margin:5px 10px;
+
+    font-size:12px;
+
+    display:block;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    }
+
+.nav ul li a:hover{
+
+    width:78px;
+
+    height:26px;
+
+    line-height:28px;
+
+    border:1px solid #aae0ff;
+
+    color: #000000;
+
+    background:#FFF;
+
+    }
+ul li{
+    list-style:none;
+  }
+   -->
+</style>
+<style type="text/css">
+    input[type="file"]
+    {
+        {#color: transparent;#}
+    }
 </style>
 <body>
 <div><b>自动化测试用例</b></div>
+<div class="nav">
+ <ul>
+
+   <li><a href="#">首页</a></li>
+
+   <li><a href="#">测试用例</a></li>
+
+   <li><a href="#">导航2</a></li>
+
+   <li><a href="#">导航3</a></li>
+
+   <li><a href="#">导航4</a></li>
+
+   <li><a href="#">导航5</a></li>
+
+   <li><a href="#">导航6</a></li>
+
+ </ul>
+
+</div>
 <div>
- <form action="search" method="get" id="my_form" >
-{#           {% csrf_token %} #}
-     <select select onchange="submitForm();" name="id" style="background:#fff;border:1px solid #ccc;">
+    <div style="">
+        <label style="float: left">用例类型：</label>
+        <form action="search" method="get" id="my_form" >
+    <select select onchange="submitForm();" name="id" style="background:#fff;border:1px solid #ccc;">
          <option value="all">全部</option>
          {% for op in bbb %}
-<option value="{{op}}" {%ifequal op ccc%}selected{% endifequal %}>{{op}}</option>
-{%endfor%}
-</select>
-</form>
+        <option value="{{op}}" {%ifequal op ccc%}selected{% endifequal %}>{{op}}</option>
+        {%endfor%}
+    </select>
+  </form>
+    </div>
+    <BR>
+    <div>
+        <form enctype="multipart/form-data" action="" method="post" style="" onsubmit="return validate_form(this)">
+            <label style="float: left">上传用例：</label>
+            <input type="file" name="myfile"/>
+            <input type="submit" value="上传"/>
+        </form>
+    </div>
 
-
-<label>上传用例：</label>
-<form enctype="multipart/form-data" action="" method="post" style="" onsubmit="return validate_form(this)">
-       <input type="file" name="myfile" />
-       <br/>
-       <input type="submit" value="上传"/>
-</form>
 
 {#以下是用django的forms来上传的#}
 {#</form>#}
