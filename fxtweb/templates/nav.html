@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<style type="text/css">
+
+    <!--
+    /***
+.nav ul{
+
+    width:980px;
+
+    {#margin:0px auto;#}
+
+    height:38px;
+
+    padding:0;
+
+    }
+
+.nav ul li{
+
+    float:left;
+    }
+
+.nav ul li a{
+
+    width:80px;
+
+    height:28px;
+
+    line-height:28px;
+
+    background: #aae0ff;
+
+    color: #000;
+
+    margin:5px 10px;
+
+    font-size:12px;
+
+    display:block;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    }
+
+.nav ul li a:hover{
+
+    width:78px;
+
+    height:26px;
+
+    line-height:28px;
+
+    border:1px solid #aae0ff;
+
+    color: #000000;
+
+    background:#FFF;
+
+    }
+ul li{
+    list-style:none;
+  }
+   ***/
+    -->
+</style>
+<script language="javascript" type="text/javascript">
+        var $c=function(array){var nArray = [];for (var i=0;i<array.length;i++) nArray.push(array[i]);return nArray;};
+        Array.prototype.each=function(func){
+        for(var i=0,l=this.length;i<l;i++) {func(this[i],i);};
+        };
+        document .getElementsByClassName=function(cn){
+        var hasClass=function(w,Name){
+        var hasClass = false;
+        w.className.split(' ').each(function(s){
+        if (s == Name) hasClass = true;
+        });
+        return hasClass;
+        };
+        var elems =document.getElementsByTagName("*")||document.all;
+           var elemList = [];
+           $c(elems).each(function(e){
+        if(hasClass(e,cn)){elemList.push(e);}
+           })
+          return $c(elemList);
+        };
+        function change_bg(obj){
+        var a=document.getElementsByClassName("nav")[0].getElementsByTagName("a");
+        for(var i=0;i<a.length;i++){a[i].className="";}
+        obj.className="current";
+        }
+</script>
+<style type="text/css">
+<!--
+.nav {
+  MARGIN: 1px 0;
+  WIDTH: 980px;
+  FONT-FAMILY: verdana;
+  HEIGHT: 21px;
+  BACKGROUND-COLOR: #970B0B;
+  font-family:Arial, Helvetica, sans-serif;
+ font-size:12px;
+}
+.nav UL {
+  PADDING: 0px;
+  DISPLAY: block;
+  MARGIN: 0px;
+  LIST-STYLE-TYPE: none;
+  HEIGHT: 21px;
+  BACKGROUND-COLOR: #970B0B;
+  COLOR: #ffffff;
+}
+.nav LI {
+  BORDER-RIGHT: #ffffff 1px solid;
+  DISPLAY: block;
+  FLOAT: left;
+  HEIGHT: 21px;
+  font-family:Arial, Helvetica, sans-serif;
+ font-size:12px;
+}
+.nav LI A {
+  PADDING:1px 15px 0;
+  DISPLAY: block;
+  COLOR: #ffffff;
+  LINE-HEIGHT: 20px;
+  TEXT-DECORATION: none;
+}
+.nav LI A:hover {
+  COLOR:#562505;
+  BACKGROUND-COLOR: #f4f524;
+  TEXT-DECORATION: none;
+}
+.current{
+ color:#ffffff;
+ background:#D42524;
+}
+.nav li#date{
+ color:#ffffff;
+ PADDING:2px 15px 0;
+}
+-->
+</style>
+</head>
+<body>
+<div class="nav">
+ <ul>
+
+   <li><a href="#" onclick="change_bg(this)" >首页</a></li>
+
+   <li><a href="#"  class="current" onclick="change_bg(this)">测试用例</a></li>
+
+   <li><a href="#" onclick="change_bg(this)">导航2</a></li>
+
+   <li><a href="#" onclick="change_bg(this)">导航3</a></li>
+
+   <li><a href="#" onclick="change_bg(this)">导航4</a></li>
+
+   <li><a href="#" onclick="change_bg(this)">导航5</a></li>
+
+   <li><a href="#" onclick="change_bg(this)">导航6</a></li>
+
+ </ul>
+
+</div>
+</body>
+</html>
